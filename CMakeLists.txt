@@ -4,4 +4,5 @@ project(WordleSutom LANGUAGES CXX)
 
 add_executable(WordleSutom
     Application.cpp
+    gamestate.h
 )
