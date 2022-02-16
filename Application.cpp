@@ -1,7 +1,6 @@
 #include <cmath>
 #include <algorithm>
 #include <array>
-#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <random>
@@ -419,31 +418,4 @@ void RealInteractiveGame()
 
 // =================================================================================================
 
-int main()
-{
-    // Below a few things you can do
 
-    BasicRuleTest();
-
-    auto clock = chrono::steady_clock();
-    const auto start = clock.now();
-
-    AutoWordle("REPAS");
-    AutoWordle("SAPIN");
-
-    const auto end = clock.now();
-    chrono::nanoseconds dt = end - start;
-    cout << "Time spent: " << double(dt.count()) / 1'000'000 << "ms" << endl;
-
-    AutoSutom("DIAMETRE");
-
-    FindBestOpening(5);  
-
-    ComputeAveragePerformance(5,10);
-
-    ComputeAverageSutomPerformance(7,10);
-
-    RealInteractiveGame();
-    
-    return 0;
-}
